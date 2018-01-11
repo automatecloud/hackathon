@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  bitbucket:
+    image: atlassian/bitbucket-server:5.6.2
+    volumes:
+      - bitbucket:/var/atlassian/application-data/bitbucket
+    ports:
+      - "7990:7990"
+      - "7999:7999"
+
+volumes:
+  bitbucket:
+    external:
+      name: bitbucketVolume
